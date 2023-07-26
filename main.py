@@ -11,7 +11,9 @@ if len(sys.argv) < 2 :
     sys.exit()
 
 file_path = str(sys.argv[1])
-operators = {'+' , '-' , '/' , '*'}
+
+# !!! Added modulo division operator !!!
+operators = {'+' , '-' , '/' , '*', '%'}
 
 def add(a, b):
     return a + b
@@ -24,12 +26,16 @@ def multiply(a, b):
 
 def divide(a, b):
     return a / b
+def modulo(a , b):
+    return a % b 
 
 operate_funcs = {
     '+': add,
     '-': subtract,
     '*': multiply,
-    '/': divide
+    '/': divide,
+    # !!! Added modulo division operator !!!
+    '%': modulo
 }
 
 def operate(op1, op2, op):
